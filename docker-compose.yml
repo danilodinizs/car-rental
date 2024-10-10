@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-car-rental
+    environment:
+      MYSQL_ROOT_PASSWORD: da3nilo~~e
+      MYSQL_DATABASE: car_rental
+      MYSQL_USER: danilodinizs
+      MYSQL_PASSWORD: da3nilo~~e
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+    driver: local

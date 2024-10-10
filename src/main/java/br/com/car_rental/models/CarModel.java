@@ -1,19 +1,17 @@
 package br.com.car_rental.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.UUID;
 
 @Entity
 @Data
+@Table(name = "car")
 public class CarModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private UUID id;
     private String name;
-    private String carModel;
+    private int year;
 }
