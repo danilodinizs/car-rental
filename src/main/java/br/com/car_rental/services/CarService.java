@@ -15,22 +15,28 @@ public class CarService {
     private CarRepository carRepository;
 
     public String save(CarModel carModel) {
+        this.carRepository.save(carModel);
         return "Car saved successfully";
     }
 
     public String update(CarModel  carModel, UUID id){
+        carModel.setId(id);
+        this.carRepository.save(carModel);
         return "Car updated successfully";
     }
 
-    public String delete (UUID id) {
+    public String delete(UUID id) {
+        this.carRepository.deleteById(id);
         return "Car deleted successfully";
     }
 
     public List<CarModel> findAll() {
-        return null;
+        List<CarModel> list = this.carRepository.findAll();
+        return list;
     }
 
     public CarModel findById(UUID id) {
-        return null;
+        CarModel carModel = this.carRepository.findById(id).get();
+        return carModel;
     }
 }
