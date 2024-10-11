@@ -1,20 +1,22 @@
 package br.com.car_rental.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Data
-@Table(name = "car")
-public class CarModel {
+@Table(name = "brand")
+public class BrandModel {
+
     @Id
     @GeneratedValue
     private UUID id;
     private String name;
-    private int year;
 
-    @ManyToOne
-    private BrandModel brandModel;
+    @OneToMany
+    private List<CarModel> carModelList;
 }
