@@ -17,6 +17,6 @@ public class BrandModel {
     private UUID id;
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "brandModel")
     private List<CarModel> carModelList;
 }
