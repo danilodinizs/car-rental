@@ -67,4 +67,14 @@ public class CarController {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/{name}")
+    public ResponseEntity<List<CarModel>> findByName(@PathVariable String name) {
+        try {
+            List<CarModel> listByName = this.carService.findByName(name);
+            return new ResponseEntity<>(listByName, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
 }

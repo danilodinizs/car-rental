@@ -39,4 +39,9 @@ public class CarService {
         CarModel carModel = this.carRepository.findById(id).get();
         return carModel;
     }
+
+    public List<CarModel> findByName(String name) {
+        List<CarModel> listByName = this.carRepository.findByName(name);
+        return listNames;
+    }
 }
