@@ -42,6 +42,11 @@ public class CarService {
 
     public List<CarModel> findByName(String name) {
         List<CarModel> listByName = this.carRepository.findByName(name);
-        return listNames;
+        return listByName;
+    }
+
+    public List<CarModel> findAboveYear(int year) {
+        List<CarModel> aboveYear = this.carRepository.findAboveYear(year);
+        return aboveYear;
     }
 }
